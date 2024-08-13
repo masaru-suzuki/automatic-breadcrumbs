@@ -15,6 +15,8 @@ export default function Page() {
       <PageHeader breadcrumbs={breadcrumbs} />
       <div className="p-2 grid gap-8 content-start">
         <div>ユーザー一覧ページコンテンツ</div>
+        <Link href="/">TOP</Link>
+        <hr />
         <div className="grid gap-2">
           {userList.map((user) => {
             const { userId, name } = user;

@@ -26,8 +26,6 @@ export const generateDynamicLabel = ({
   // paramsのキーに基づいてカスタムラベルを設定
   const customizedParams = { ...params };
 
-  console.log(customizedParams);
-
   if (params.userId) {
     const userName = getUserNameById(params.userId);
     if (userName) {
@@ -41,6 +39,8 @@ export const generateDynamicLabel = ({
       customizedParams.favoriteShopId = shopName;
     }
   }
+
+  // NOTE: 比較のため、あえて企業に関しては、IDをそのまま表示
 
   return title.replace(/\${(.*?)}/g, (_, key) => customizedParams[key] || '');
 };

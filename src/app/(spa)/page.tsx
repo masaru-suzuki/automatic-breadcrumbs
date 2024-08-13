@@ -9,17 +9,13 @@ export default function Page() {
         <p>
           <Link href="/end-users">エンドユーザー一覧</Link>
         </p>
-
-        <p>
-          <Link href="/providers">プロバイダ設定</Link>
-        </p>
         <hr />
         <h2 className="text-2xl font-bold">動的コンテンツ</h2>
         {companyList.map((company) => {
           const { companyId, label } = company;
           return (
             <div key={companyId}>
-              <Link href={`/${companyId}`}>{label}</Link>
+              <Link href={`/company/${companyId}`}>{label}</Link>
             </div>
           );
         })}

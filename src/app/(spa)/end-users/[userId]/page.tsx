@@ -27,6 +27,7 @@ export default function Page({ params }: Params) {
           {userName}のお気に入り店舗
         </Link>
         <Link href="/end-users">ユーザー一覧</Link>
+        <Link href="/">TOP</Link>
         <hr />
         <h2>dynamic route（{userName}のお気に入り店舗）</h2>
         <div className="grid gap-4">
