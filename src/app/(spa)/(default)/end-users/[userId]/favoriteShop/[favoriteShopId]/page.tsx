@@ -1,6 +1,6 @@
 'use client';
 
-import { favoriteShopList, getShopNameById } from '@/constants/favoriteShop';
+import { getShopNameById } from '@/constants/favoriteShop';
 import { getUserNameById } from '@/constants/user';
 import { useBreadcrumbs } from '@/hooks/useBreadcrumbs';
 
