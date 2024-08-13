@@ -1,22 +1,27 @@
 export const userList = [
   {
-    userId: '1',
+    userId: 'user-1',
     name: '玉ねぎ',
   },
   {
-    userId: '2',
+    userId: 'user-2',
     name: 'なす',
   },
   {
-    userId: '3',
+    userId: 'user-3',
     name: 'きゅうり',
   },
   {
-    userId: '4',
+    userId: 'user-4',
     name: 'トマト',
   },
   {
-    userId: '5',
+    userId: 'user-5',
     name: 'ピーマン',
   },
 ];
+
+export const getUserNameById = (userId: string): string | undefined => {
+  const user = userList.find((user) => user.userId === userId);
+  return user?.name;
+};

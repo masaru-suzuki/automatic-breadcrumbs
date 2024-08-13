@@ -1,14 +1,14 @@
 export const companyList = [
   {
-    companyId: 'tomiz',
+    companyId: 'company-tomiz',
     label: '富澤商店',
   },
   {
-    companyId: 'sapporo',
+    companyId: 'company-sapporo',
     label: 'サッポロビール',
   },
   {
-    companyId: 'suntory',
+    companyId: 'company-suntory',
     label: 'サントリー',
   },
 ];
