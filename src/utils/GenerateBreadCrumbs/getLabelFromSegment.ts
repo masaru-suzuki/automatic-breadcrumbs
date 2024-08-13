@@ -22,7 +22,7 @@ export const getLabelFromSegment = (
   const matchedSegment = findSegmentInSiteMap(segments, siteMap);
 
   if (!matchedSegment) {
-    return segments[segments.length - 1]; // 該当するセグメントがない場合は、セグメント名をそのまま使用
+    throw new Error('No matching segment found in siteMap');
   }
 
   if (matchedSegment.dynamic) {
