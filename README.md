@@ -8,6 +8,23 @@
     - dynamic route が `[userId]` なら
     - `${userId}` と表現します
 
+## パンクズのカスタマイズ
+
+- 動的ルートについては `params` をそのまま表記するのがデフォルトになっています。
+- ex）`/company/company-tomiz` なら `企業情報 > company-tomiz` と表記されます。
+- 動的ルートのパンクズをカスタマイズする場合、 `src/utils/GenerateBreadCrumbs/generateDynamicLabel.ts` 内でカスタマイズします。
+- switch 文で範囲を絞り、変換ロジックを実行します。
+- ex）userId を任意の名前に変更する
+
+```
+case 'userId':
+  const userName = getUserNameById(params[key]);
+  if (userName) {
+    customizedParams[key] = userName;
+  }
+  break;
+```
+
 ## NG パターン
 
 - NG パターンは想定しておりません。
