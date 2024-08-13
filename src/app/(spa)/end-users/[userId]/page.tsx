@@ -35,7 +35,7 @@ export default function Page({ params }: Params) {
             return (
               <Link
                 href={`/end-users/${userId}/favoriteShop/${favoriteShopId}`}
-                key={userId}
+                key={`${userId}-${favoriteShopId}`}
               >
                 お気に入り店舗: {label}
               </Link>
