@@ -6,14 +6,19 @@ export default function Page() {
     <div className="grid gap-4">
       <h1 className="">home</h1>
       <div className="p-2 grid gap-8 content-start">
-        <p>
-          <Link href="/end-users">エンドユーザー一覧</Link>
-        </p>
+        <h2 className="text-2xl font-bold">カスタムパンクズ</h2>
         <p>
           <Link href="/customBreadcrumbs">カスタムパンクズページ</Link>
         </p>
         <hr />
         <h2 className="text-2xl font-bold">動的コンテンツ</h2>
+        <p className="font-bold text-lg">
+          パンクズのラベル置き換えロジックあり
+        </p>
+        <Link href="/end-users">エンドユーザー一覧</Link>
+        <p className="font-bold text-lg mt-8">
+          パンクズのラベル置き換えロジックなし
+        </p>
         {companyList.map((company) => {
           const { companyId, label } = company;
           return (
