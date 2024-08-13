@@ -26,17 +26,23 @@ export const generateDynamicLabel = ({
   // paramsのキーに基づいてカスタムラベルを設定
   const customizedParams = { ...params };
 
-  if (params.userId) {
-    const userName = getUserNameById(params.userId);
-    if (userName) {
-      customizedParams.userId = userName;
-    }
-  }
-
-  if (params.favoriteShopId) {
-    const shopName = getShopNameById(params.favoriteShopId);
-    if (shopName) {
-      customizedParams.favoriteShopId = shopName;
+  for (const key in params) {
+    switch (key) {
+      case 'userId':
+        const userName = getUserNameById(params[key]);
+        if (userName) {
+          customizedParams[key] = userName;
+        }
+        break;
+      case 'favoriteShopId':
+        const shopName = getShopNameById(params[key]);
+        if (shopName) {
+          customizedParams[key] = shopName;
+        }
+        break;
+      // 他のキーの場合はそのままにしておく
+      default:
+        break;
     }
   }
 
