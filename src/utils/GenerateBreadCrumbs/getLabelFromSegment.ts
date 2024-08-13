@@ -1,7 +1,6 @@
 import { siteMap } from '@/app/constants/site';
 import { findSegmentInSiteMap } from './findSegmentInSiteMap';
-
-// セグメントごとに適切なラベルを取得する関数
+import { generateDynamicLabel } from './generateDynamicLabel';
 export const getLabelFromSegment = (
   segments: string[],
   params: Record<string, string>
@@ -12,7 +11,9 @@ export const getLabelFromSegment = (
     return segments[segments.length - 1]; // 該当するセグメントがない場合は、セグメント名をそのまま使用
   }
 
-  return matchedSegment.dynamic && params[matchedSegment.path]
-    ? params[matchedSegment.path]
-    : matchedSegment.title;
+  if (matchedSegment.dynamic) {
+    return generateDynamicLabel({ title: matchedSegment.title, params });
+  }
+
+  return matchedSegment.title;
 };

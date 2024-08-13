@@ -1,0 +1,24 @@
+type GenerateDynamicLabelArg = {
+  title: string;
+  params: Record<string, string>;
+};
+
+/**
+ * 動的なタイトル文字列内のプレースホルダーを、指定されたパラメータの値で置換する関数
+ *
+ * @param title - プレースホルダーを含む動的なタイトル文字列 (例: "${userId}の詳細画面")
+ * @param params - プレースホルダーに対応する値を持つオブジェクト (例: { userId: "tomiz" })
+ * @returns プレースホルダーが指定されたパラメータの値で置換されたタイトル文字列
+ *
+ * @example
+ * const title = "${userId}の詳細画面";
+ * const params = { userId: "tomiz" };
+ * const result = generateDynamicLabel({ title, params });
+ * console.log(result); // "tomizの詳細画面"
+ */
+export const generateDynamicLabel = ({
+  title,
+  params,
+}: GenerateDynamicLabelArg): string => {
+  return title.replace(/\${(.*?)}/g, (_, key) => params[key] || '');
+};

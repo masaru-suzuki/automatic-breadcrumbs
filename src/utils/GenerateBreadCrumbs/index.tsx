@@ -1,4 +1,3 @@
-import { siteMap, type SiteMap } from '@/app/constants/site';
 import { getLabelFromSegment } from './getLabelFromSegment';
 
 export type Breadcrumb = {
