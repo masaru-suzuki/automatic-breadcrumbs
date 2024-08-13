@@ -9,6 +9,9 @@ export default function Page() {
         <p>
           <Link href="/end-users">エンドユーザー一覧</Link>
         </p>
+        <p>
+          <Link href="/customBreadcrumbs">カスタムパンクズページ</Link>
+        </p>
         <hr />
         <h2 className="text-2xl font-bold">動的コンテンツ</h2>
         {companyList.map((company) => {

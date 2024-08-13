@@ -86,4 +86,9 @@ export const siteMap: SiteMap[] = [
       },
     ],
   },
+  {
+    title: 'カスタムパンくず',
+    path: 'customBreadcrumbs',
+    dynamic: false,
+  },
 ];
