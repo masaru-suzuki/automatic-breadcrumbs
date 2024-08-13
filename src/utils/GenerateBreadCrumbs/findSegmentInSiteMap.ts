@@ -1,4 +1,4 @@
-import { type SiteMap } from '@/app/constants/site';
+import { SiteMap } from '@/constants/site';
 
 /**
  * パスのセグメントに基づいて、対応するサイトマップエントリを再帰的に検索する関数

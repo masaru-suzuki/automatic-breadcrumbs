@@ -1,4 +1,4 @@
-import { siteMap } from '@/app/constants/site';
+import { siteMap } from '@/constants/site';
 import { findSegmentInSiteMap } from './findSegmentInSiteMap';
 import { generateDynamicLabel } from './generateDynamicLabel';
 

@@ -17,7 +17,7 @@ export const siteMap: SiteMap[] = [
         dynamic: true,
         children: [
           {
-            title: '設定',
+            title: '詳細設定',
             path: 'setting',
             dynamic: false,
           },
@@ -44,11 +44,6 @@ export const siteMap: SiteMap[] = [
       },
     ],
   },
-  {
-    title: '${companyId}の企業詳細',
-    path: 'companyId',
-    dynamic: true,
-  },
   /*
    * NGパターン
    * {
@@ -71,6 +66,11 @@ export const siteMap: SiteMap[] = [
         path: 'officers',
         title: '役員',
         dynamic: false,
+      },
+      {
+        title: '${companyId}の企業詳細',
+        path: 'companyId',
+        dynamic: true,
       },
     ],
   },
