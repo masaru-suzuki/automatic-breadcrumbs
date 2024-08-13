@@ -6,14 +6,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 export default function Page() {
-  // const pathname = usePathname();
-  // const breadcrumbs = generateBreadCrumbs({ pathname });
-  const breadcrumbs = [
-    {
-      label: '企業情報',
-      href: '/company',
-    },
-  ];
+  const pathname = usePathname();
+  const breadcrumbs = generateBreadCrumbs({ pathname });
 
   return (
     <>
