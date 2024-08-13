@@ -3,10 +3,14 @@ import { Breadcrumb, generateBreadCrumbs } from '@/utils/GenerateBreadCrumbs';
 import { usePathname } from 'next/navigation';
 import { useEffect } from 'react';
 
-export const useBreadcrumbs = (
-  params?: Record<string, string>,
-  customBreadcrumbs?: Breadcrumb[]
-) => {
+type UseBreadcrumbsArg = {
+  params?: Record<string, string>;
+  customBreadcrumbs?: Breadcrumb[];
+};
+export const useBreadcrumbs = ({
+  params,
+  customBreadcrumbs,
+}: UseBreadcrumbsArg): void => {
   const pathname = usePathname();
   const { setBreadcrumbs } = useBreadcrumbsContext();
 
