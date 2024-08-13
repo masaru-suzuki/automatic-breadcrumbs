@@ -1,4 +1,6 @@
+import { getUserNameById } from '@/constants/user';
 import { getLabelFromSegment } from './getLabelFromSegment';
+import { getShopNameById } from '@/constants/favoriteShop';
 
 export type Breadcrumb = {
   label: string;
@@ -29,6 +31,7 @@ type GenerateBreadCrumbsArgs = {
  * //   { label: "設定", href: "/end-users/tomiz/setting" }
  * // ]
  */
+
 export const generateBreadCrumbs = ({
   pathname,
   params = {},
@@ -39,6 +42,7 @@ export const generateBreadCrumbs = ({
 
   segments.forEach((segment, index) => {
     const pathSegments = segments.slice(0, index + 1);
+
     accumulatedPath += `/${segment}`;
     const label = getLabelFromSegment(pathSegments, params);
     breadcrumbs.push({

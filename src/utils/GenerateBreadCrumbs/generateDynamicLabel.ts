@@ -1,3 +1,6 @@
+import { getShopNameById } from '@/constants/favoriteShop';
+import { getUserNameById } from '@/constants/user';
+
 type GenerateDynamicLabelArg = {
   title: string;
   params: Record<string, string>;
@@ -20,5 +23,24 @@ export const generateDynamicLabel = ({
   title,
   params,
 }: GenerateDynamicLabelArg): string => {
-  return title.replace(/\${(.*?)}/g, (_, key) => params[key] || '');
+  // paramsのキーに基づいてカスタムラベルを設定
+  const customizedParams = { ...params };
+
+  console.log(customizedParams);
+
+  if (params.userId) {
+    const userName = getUserNameById(params.userId);
+    if (userName) {
+      customizedParams.userId = userName;
+    }
+  }
+
+  if (params.favoriteShopId) {
+    const shopName = getShopNameById(params.favoriteShopId);
+    if (shopName) {
+      customizedParams.favoriteShopId = shopName;
+    }
+  }
+
+  return title.replace(/\${(.*?)}/g, (_, key) => customizedParams[key] || '');
 };

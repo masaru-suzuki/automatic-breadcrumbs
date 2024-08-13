@@ -12,3 +12,10 @@ export const favoriteShopList = [
     label: '八代目儀兵衛',
   },
 ];
+
+export const getShopNameById = (favoriteShopId: string): string | undefined => {
+  const user = favoriteShopList.find(
+    (shop) => shop.favoriteShopId === favoriteShopId
+  );
+  return user?.label;
+};
