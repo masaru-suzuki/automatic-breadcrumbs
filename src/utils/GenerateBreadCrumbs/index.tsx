@@ -10,7 +10,25 @@ type GenerateBreadCrumbsArgs = {
   params?: Record<string, string>;
 };
 
-// パンくずリストを生成するメイン関数
+/**
+ * 現在のURLパスに基づいて、パンくずリストを生成する関数
+ *
+ * @param pathname - 現在のページのURLパス。例: "/end-users/tomiz/setting"
+ * @param params - 動的ルートのパラメータを含むオブジェクト。例: { userId: "tomiz" }
+ * @returns パンくずリストを表すBreadcrumbオブジェクトの配列。各オブジェクトはラベルとそのリンクを持つ
+ *
+ * @example
+ * const pathname = "/end-users/tomiz/setting";
+ * const params = { userId: "tomiz" };
+ * const breadcrumbs = generateBreadCrumbs({ pathname, params });
+ * console.log(breadcrumbs);
+ * // 出力:
+ * // [
+ * //   { label: "エンドユーザー一覧", href: "/end-users" },
+ * //   { label: "tomizの詳細画面", href: "/end-users/tomiz" },
+ * //   { label: "設定", href: "/end-users/tomiz/setting" }
+ * // ]
+ */
 export const generateBreadCrumbs = ({
   pathname,
   params = {},
