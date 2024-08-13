@@ -1,23 +1,17 @@
+import { useBreadcrumbsContext } from '@/context/BreadcrumbsContext';
 import Link from 'next/link';
-
-export type Breadcrumb = {
-  label: string;
-  href: string;
-};
-
-type PageHeaderProps = {
-  breadcrumbs: Breadcrumb[];
-};
 
 /**
  * ページヘッダー
  * @param title ページタイトル
  * @param breadcrumbs パンくずリスト
  * NOTE: ディレクトリ表とパンクズが連動していることを前提としている
- * 例えば、https://globis.jp/article/09rlj-8hiacn/のような構成はNG
  */
-export const PageHeader = ({ breadcrumbs = [] }: PageHeaderProps) => {
+export const PageHeader = () => {
+  const { breadcrumbs } = useBreadcrumbsContext();
   const lastBreadcrumb = breadcrumbs[breadcrumbs.length - 1];
+
+  if (breadcrumbs.length <= 0) return null;
 
   return (
     <div>
