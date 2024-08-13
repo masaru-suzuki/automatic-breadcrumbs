@@ -49,6 +49,14 @@ export const siteMap: SiteMap[] = [
     path: 'companyId',
     dynamic: true,
   },
+  /*
+   * NGパターン
+   * {
+   *   title: 'companyId（static）',
+   *   path: 'companyId',
+   *   dynamic: false,
+   * },
+   */
   {
     title: '企業情報',
     path: 'company',
