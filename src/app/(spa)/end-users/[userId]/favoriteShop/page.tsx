@@ -32,10 +32,12 @@ export default function Page({ params }: Props) {
         <h2>dynamic route（{userName}のお気に入り店舗一覧）</h2>
         <div className="grid gap-4">
           {favoriteShopList.map((shop) => {
-            const { shopId, label } = shop;
+            const { favoriteShopId, label } = shop;
             return (
-              <div key={shopId}>
-                <Link href={`/end-users/${userId}/favoriteShop/${shopId}`}>
+              <div key={favoriteShopId}>
+                <Link
+                  href={`/end-users/${userId}/favoriteShop/${favoriteShopId}`}
+                >
                   {label}
                 </Link>
               </div>
