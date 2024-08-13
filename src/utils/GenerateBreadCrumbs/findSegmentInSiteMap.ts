@@ -42,11 +42,18 @@ export const findSegmentInSiteMap = (
   if (segments.length === 0) return undefined;
 
   const [currentSegment, ...restSegments] = segments;
-  const matchedSegment = currentSiteMap.find(
-    (item) => item.path === currentSegment || item.dynamic
+
+  // 厳密にpathが一致するセグメントを優先して探す
+  let matchedSegment = currentSiteMap.find(
+    (item) => item.path === currentSegment
   );
 
-  if (restSegments.length === 0 || !matchedSegment) {
+  // 厳密な一致が見つからない場合、動的なセグメントを探す
+  if (!matchedSegment) {
+    matchedSegment = currentSiteMap.find((item) => item.dynamic);
+  }
+
+  if (!matchedSegment || restSegments.length === 0) {
     return matchedSegment;
   }
 
