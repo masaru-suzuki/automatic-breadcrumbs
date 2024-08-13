@@ -12,13 +12,13 @@ export const siteMap: SiteMap[] = [
     dynamic: false,
     children: [
       {
-        title: 'ユーザー詳細',
-        path: 'end-users/${userId}',
+        title: '${userId}の詳細画面',
+        path: 'userId',
         dynamic: true,
         children: [
           {
             title: '設定',
-            path: 'settings',
+            path: 'setting',
             dynamic: false,
           },
         ],
@@ -45,9 +45,9 @@ export const siteMap: SiteMap[] = [
     ],
   },
   {
-    title: '企業詳細',
+    title: '${companyId}の企業詳細',
     path: 'companyId',
-    dynamic: false,
+    dynamic: true,
   },
   {
     title: '企業情報',
