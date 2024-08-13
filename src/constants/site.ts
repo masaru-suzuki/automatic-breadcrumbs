@@ -21,6 +21,18 @@ export const siteMap: SiteMap[] = [
             path: 'setting',
             dynamic: false,
           },
+          {
+            title: 'お気に入り店舗一覧',
+            path: 'favoriteShop',
+            dynamic: false,
+            children: [
+              {
+                title: '${userId}のお気に入り店舗: ${favoriteShopId} の詳細',
+                path: 'favoriteShopId',
+                dynamic: true,
+              },
+            ],
+          },
         ],
       },
     ],
