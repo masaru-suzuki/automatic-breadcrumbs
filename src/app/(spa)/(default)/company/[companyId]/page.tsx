@@ -9,7 +9,7 @@ type Props = {
   };
 };
 export default function Page({ params }: Props) {
-  useBreadcrumbs(params);
+  useBreadcrumbs({ params });
   const companyId = params.companyId;
 
   return (

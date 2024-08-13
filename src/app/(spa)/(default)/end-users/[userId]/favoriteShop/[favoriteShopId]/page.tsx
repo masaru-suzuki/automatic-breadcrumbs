@@ -11,7 +11,7 @@ type Params = {
   };
 };
 export default function Page({ params }: Params) {
-  useBreadcrumbs(params);
+  useBreadcrumbs({ params });
   const { userId, favoriteShopId } = params;
   const userName = getUserNameById(userId);
   const shopName = getShopNameById(favoriteShopId);
