@@ -20,6 +20,7 @@ export default function Page({ params }: Props) {
       <PageHeader breadcrumbs={breadcrumbs} />
       <div className="p-2 grid gap-8 content-start">
         <div>企業ID:{companyId}のコンテンツ</div>
+        <Link href="/company">企業TOP</Link>
         <Link href="/">TOP</Link>
       </div>
     </>
