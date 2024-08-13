@@ -1,6 +1,6 @@
 'use client';
 
-import { favoriteShopList } from '@/constants/favoriteShop';
+import { favoriteShopList, getShopNameById } from '@/constants/favoriteShop';
 import { getUserNameById } from '@/constants/user';
 import { useBreadcrumbs } from '@/hooks/useBreadcrumbs';
 
@@ -14,9 +14,7 @@ export default function Page({ params }: Params) {
   useBreadcrumbs(params);
   const { userId, favoriteShopId } = params;
   const userName = getUserNameById(userId);
-  const shopName = favoriteShopList.find(
-    (shop) => shop.favoriteShopId === favoriteShopId
-  )?.label;
+  const shopName = getShopNameById(favoriteShopId);
 
   return (
     <div className="p-2 grid gap-8 content-start">
