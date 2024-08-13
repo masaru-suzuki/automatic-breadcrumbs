@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { userList } from '@/constants/user';
+import { getUserNameById } from '@/constants/user';
 import { useBreadcrumbs } from '@/hooks/useBreadcrumbs';
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 export default function Page({ params }: Props) {
   const { userId } = params;
   useBreadcrumbs(params);
-  const userName = userList.find((user) => user.userId === userId)?.name;
+  const userName = getUserNameById(userId);
 
   return (
     <div className="p-2 grid gap-8 content-start">

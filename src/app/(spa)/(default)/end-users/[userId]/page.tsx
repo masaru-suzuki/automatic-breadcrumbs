@@ -1,7 +1,7 @@
 'use client';
 
 import { favoriteShopList } from '@/constants/favoriteShop';
-import { userList } from '@/constants/user';
+import { getUserNameById } from '@/constants/user';
 import { useBreadcrumbs } from '@/hooks/useBreadcrumbs';
 import Link from 'next/link';
 
@@ -14,7 +14,7 @@ export default function Page({ params }: Params) {
   useBreadcrumbs(params);
   const { userId } = params;
 
-  const userName = userList.find((user) => user.userId === userId)?.name;
+  const userName = getUserNameById(userId);
   return (
     <div className="p-2 grid gap-8 content-start">
       <div>ユーザー:{userName}の管理画面コンテンツ</div>

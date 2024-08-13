@@ -1,7 +1,7 @@
 'use client';
 
 import { favoriteShopList } from '@/constants/favoriteShop';
-import { userList } from '@/constants/user';
+import { getUserNameById } from '@/constants/user';
 import { useBreadcrumbs } from '@/hooks/useBreadcrumbs';
 
 type Params = {
@@ -13,7 +13,7 @@ type Params = {
 export default function Page({ params }: Params) {
   useBreadcrumbs(params);
   const { userId, favoriteShopId } = params;
-  const userName = userList.find((user) => user.userId === userId)?.name;
+  const userName = getUserNameById(userId);
   const shopName = favoriteShopList.find(
     (shop) => shop.favoriteShopId === favoriteShopId
   )?.label;
