@@ -1,6 +1,5 @@
-import { getUserNameById } from '@/constants/user';
 import { getLabelFromSegment } from './getLabelFromSegment';
-import { getShopNameById } from '@/constants/favoriteShop';
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
 
 export type Breadcrumb = {
   label: string;
@@ -9,7 +8,7 @@ export type Breadcrumb = {
 
 type GenerateBreadCrumbsArgs = {
   pathname: string;
-  params?: Record<string, string>;
+  params?: Params;
 };
 
 /**
