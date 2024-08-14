@@ -8,6 +8,12 @@
     - dynamic route が `[userId]` なら
     - `${userId}` と表現します
 
+## ディレクトリ構成の設定方法と実装の説明
+
+- app router のディレクトリ構成に沿った形で `src/constants/site.ts` の siteMap を作成します。
+- カスタムフック `useBreadcrumbs` を各 page.tsx で読み込むことによって、`useContext` を利用して パンクズリストのコンテキストが更新されます。
+- `<PageHeader />` コンポーネントでは `useContext` を利用して現在いるページのパスが同期され、レンダリングされます。
+
 ## パンクズのカスタマイズ
 
 - 動的ルートについては `params` をそのまま表記するのがデフォルトになっています。
