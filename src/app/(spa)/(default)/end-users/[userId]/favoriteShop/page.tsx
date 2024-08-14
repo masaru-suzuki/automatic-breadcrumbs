@@ -11,7 +11,7 @@ type Props = {
   };
 };
 export default function Page({ params }: Props) {
-  useBreadcrumbs({ params });
+  useBreadcrumbs();
 
   const { userId } = params;
   const userName = getUserNameById(userId);

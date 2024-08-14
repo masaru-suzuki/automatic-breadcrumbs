@@ -18,7 +18,7 @@ export default function Page() {
       href: '/customBreadcrumbs',
     },
   ];
-  useBreadcrumbs({ customBreadcrumbs });
+  useBreadcrumbs(customBreadcrumbs);
 
   return (
     <div className="p-2 grid gap-8 content-start">
