@@ -35,6 +35,8 @@ export const generateBreadCrumbs = ({
   pathname,
   params = {},
 }: GenerateBreadCrumbsArgs): Breadcrumb[] => {
+  // TODO: paramsがあったらdynamicだと判断して、パンくずリストを生成する
+  // TODO: site.tsxのdynamic flagは不要かもしれないので検証
   const segments = pathname.split('/').filter(Boolean); // パス名をセグメントに分解
   const breadcrumbs: Breadcrumb[] = [];
   let accumulatedPath = '';

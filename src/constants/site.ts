@@ -5,6 +5,7 @@ export type SiteMap = {
   children?: SiteMap[];
 };
 
+// TODO: meta情報も管理できたらいいかも
 export const siteMap: SiteMap[] = [
   {
     title: 'エンドユーザー一覧',
